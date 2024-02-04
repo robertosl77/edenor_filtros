@@ -12,6 +12,7 @@
     <title>Filtros</title>
     <link rel="stylesheet" href="./css/comunes.css">
     <link rel="stylesheet" href="./css/filtros.css">
+    <link rel="stylesheet" href="./css/botones.css">
     <script src="./js/filtros.js"></script>
 </head>
 <body>
