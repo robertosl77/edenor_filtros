@@ -1,0 +1,61 @@
+/* 
+    Created on : 2 feb. 2024, 23:18:33
+    Author     : robertosl
+*/
+
+#login-form {
+    max-width: 400px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#login-form h2 {
+    margin-bottom: 20px;
+}
+
+#login-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#login-form button {
+    background-color: #0078d4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#new-access-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#new-access-link a {
+    color: #0078d4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#error-message {
+    background-color: #ff6666; /* Color rojo */
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    /* Cambia display a block para que el elemento sea visible por defecto */
+    display: block;
+}
