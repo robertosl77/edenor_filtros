@@ -32,3 +32,12 @@ body {
 #header h1 {
     margin: 0; /* Elimina el margen por defecto del h1 */
 }
+
+#status-message {
+    background-color: #ff6666; /* Color rojo */
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    /* Cambia display a block para que el elemento sea visible por defecto */
+    display: block;
+}

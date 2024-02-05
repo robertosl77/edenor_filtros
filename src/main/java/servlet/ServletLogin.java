@@ -33,7 +33,7 @@ public class ServletLogin extends HttpServlet {
             response.sendRedirect("filtros.jsp?accion=load");
         } else {
             // Si la validación falla, redirige de nuevo a login.jsp con un parámetro de error
-            response.sendRedirect("login.jsp?error=true");
+            response.sendRedirect("login.jsp?accion=err_login");
         }
     }
 }

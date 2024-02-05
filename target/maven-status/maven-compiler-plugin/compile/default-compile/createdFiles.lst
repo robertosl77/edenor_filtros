@@ -1,4 +1,6 @@
 funciones\ValidaUsuario.class
 servlet\ServletFiltros.class
 servlet\ServletLogin.class
+funciones\FiltrosUtil.class
 dto\FiltrosDTO.class
+dto\DocumentosDTO.class

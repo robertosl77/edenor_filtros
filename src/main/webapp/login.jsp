@@ -7,7 +7,7 @@
     <title>Portal de EDENOR</title>
     <link rel="stylesheet" href="./css/comunes.css">
     <link rel="stylesheet" href="./css/login.css">
-    <script src="./js/login.js"></script>
+    <script src="./js/comunes.js"></script>
 </head>
 <body>
     <div id="header">
@@ -18,10 +18,12 @@
     <div id="login-form">
         <%
             //Mensajes que duran unos segundos
-            if (request.getParameter("error") != null){
-                out.println("<div id='error-message'>¡Usuario o contraseña incorrectos! <br>Inténtalo de nuevo.</div><br>");
-            } else if (request.getParameter("logout ") != null){
-                out.println("<div id='error-message'>Sesion finalizada.</div><br>");
+            if (request.getParameter("accion")!=null){
+                if (request.getParameter("accion").equals("err_login")){
+                    out.println("<div id='status-message'>¡Usuario o contraseña incorrectos! <br>Inténtalo de nuevo.</div><br>");
+                } else if (request.getParameter("accion").equals("logout")){
+                    out.println("<div id='status-message'>Sesion finalizada.</div><br>");
+                }
             }
         %>
 

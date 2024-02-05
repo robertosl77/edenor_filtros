@@ -21,13 +21,13 @@ public class ServletFiltros extends HttpServlet {
         
         switch (accion) {
             case "salir":
-                response.sendRedirect("login.jsp?logout=true");
+                response.sendRedirect("login.jsp?accion=logout");
                 break;
             case "cancelar":
                 response.sendRedirect("construccion.jsp");
                 break;
             case "simular":
-                response.sendRedirect("construccion.jsp");
+                response.sendRedirect("filtros.jsp?accion=simula");
                 break;
             case "confirmar":
                 response.sendRedirect("construccion.jsp");
