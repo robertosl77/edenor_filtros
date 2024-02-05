@@ -12,6 +12,7 @@
     <title>Filtros</title>
     <link rel="stylesheet" href="./css/comunes.css">
     <link rel="stylesheet" href="./css/filtros.css">
+    <link rel="stylesheet" href="./css/botones.css">
     <script src="./js/filtros.js"></script>
 </head>
 <body>
@@ -22,59 +23,62 @@
     </div>
 
     <div id="tabla-filtros">
-        <table>
-            <thead>
-                <tr>
-                    <th>Procesos</th>
-                    <th>Info</th>
-                    <th>Pendiente</th>
-                    <th>En Tratamiento</th>
-                    <th>Despachado</th>
-                    <th>Con Anomalía</th>
-                    <th>Cerrado</th>
-                    <th>Cancelado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ingreso MT General</td>
-                    <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="1"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="2"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="3"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="4"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="5"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="6"></div></td>
-                </tr>
-                <tr>
-                    <td>Ingreso Forzado MT</td>
-                    <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="1"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="2"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="3"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="4"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="5"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="6"></div></td>
-                </tr>
-                <tr>
-                    <td>Ingreso Programado MT</td>
-                    <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="1"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="2"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="3"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="4"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="5"></div></td>
-                    <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="6"></div></td>
-                </tr>
-                <!-- Repite estas filas para los demás procesos -->
-            </tbody>
-        </table>
+        <form action="ServletFiltros" method="post">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Procesos</th>
+                        <th>Info</th>
+                        <th>Pendiente</th>
+                        <th>En Tratamiento</th>
+                        <th>Despachado</th>
+                        <th>Con Anomalía</th>
+                        <th>Cerrado</th>
+                        <th>Cancelado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ingreso MT General</td>
+                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="1"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="2"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="3"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="4"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="5"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="6"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Ingreso Forzado MT</td>
+                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="1"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="2"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="3"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="4"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="5"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="6"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Ingreso Programado MT</td>
+                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="1"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="2"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="3"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="4"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="5"></div></td>
+                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="6"></div></td>
+                    </tr>
+                    <!-- Repite estas filas para los demás procesos -->
+                </tbody>
+            </table>
 
-        <div id="botones">
-            <button onclick="cancelar()" id="cancelar-button">Cancelar</button>
-            <button onclick="simular()" id="simular-button">Simular</button>
-            <button onclick="confirmar()" id="confirmar-button">Confirmar</button>
-        </div>
+            <div id="botones">
+                <button name="accion" value="salir" id="salir-button">Salir</button>
+                <button name="accion" value="cancelar" id="cancelar-button">Cancelar</button>
+                <button name="accion" value="simular" id="simular-button">Simular</button>
+                <button name="accion" value="confirmar" id="confirmar-button">Confirmar</button>
+            </div>
+        </form>
     </div>
 
 
