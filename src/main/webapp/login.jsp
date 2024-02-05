@@ -16,13 +16,14 @@
     </div>
 
     <div id="login-form">
-        
-        <% if (request.getParameter("error") != null) { %>
-            <div id="error-message">
-                ¡Usuario o contraseña incorrectos! <br>Inténtalo de nuevo.
-            </div>
-            <br>
-        <% } %>
+        <%
+            //Mensaje 
+            if (request.getParameter("error") != null){
+                out.println("<div id='error-message'>¡Usuario o contraseña incorrectos! <br>Inténtalo de nuevo.</div><br>");
+            } else if (request.getParameter("logout") != null){
+                out.println("<div id='error-message'>Sesion finalizada.</div><br>");
+            }
+        %>
 
         <!-- Formulario de login -->
         <form action="ServletLogin" method="post" onsubmit="return validarUsuario();">

@@ -34,8 +34,8 @@ public class ServletFiltros extends HttpServlet {
                 break;
         }
  
-        PrintWriter out = response.getWriter();
-        out.println("ddd");
+        //PrintWriter out = response.getWriter();
+        //out.println("ddd");
 
     }
     
