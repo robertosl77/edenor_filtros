@@ -27,7 +27,13 @@
         <artifactId>javax.servlet-api</artifactId>
         <version>4.0.1</version> <!-- Puedes ajustar la versión según tu necesidad -->
         <scope>provided</scope>
-    </dependency>                
+    </dependency>
+
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>    
         
     </dependencies>
 

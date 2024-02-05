@@ -1,4 +1,4 @@
-package Servlet;
+package servlet;
 
 import funciones.ValidaUsuario;
 import java.io.IOException;
@@ -30,7 +30,7 @@ public class ServletLogin extends HttpServlet {
 
         if (ValidaUsuario.validaUsuario(usuario, contrasena)) {
             // Si la validación es exitosa, redirige a filtros.jsp
-            response.sendRedirect("filtros.jsp");
+            response.sendRedirect("filtros.jsp?accion=load");
         } else {
             // Si la validación falla, redirige de nuevo a login.jsp con un parámetro de error
             response.sendRedirect("login.jsp?error=true");

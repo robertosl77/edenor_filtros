@@ -3,6 +3,8 @@
     Created on : 3 feb. 2024, 00:08:36
     Author     : robertosl
 --%>
+<%@page import="dto.FiltrosDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,6 +23,50 @@
         <img src="./img/logo2.png" alt="Logo de EDENOR">
         <h1>Filtros</h1>
     </div>
+    
+    <%
+        //Dejo preparado una matriz para cuando pueda tomar valores de oracle
+        ArrayList<FiltrosDTO> filtrosList= new ArrayList<>();
+        FiltrosDTO f;
+        //
+        f= new FiltrosDTO();
+        f.setId(1);
+        f.setProceso("Ingreso MT General");
+        f.setInfo("Este filtro es general no se recomienda modificar!.");
+        f.setPendiente(true);
+        f.setTratamiento(true);
+        f.setDespachado(true);
+        f.setAnomalia(true);
+        f.setCerrado(false);
+        f.setCancelado(false);
+        filtrosList.add(f);
+        //
+        f= new FiltrosDTO();
+        f.setId(2);
+        f.setProceso("Ingreso Forzado MT");
+        f.setInfo("Este filtro se encarga de los Estados en los Forzados MT.");
+        f.setPendiente(false);
+        f.setTratamiento(true);
+        f.setDespachado(true);
+        f.setAnomalia(true);
+        f.setCerrado(false);
+        f.setCancelado(false);
+        filtrosList.add(f);
+        //
+        f= new FiltrosDTO();
+        f.setId(3);
+        f.setProceso("Ingreso Programado MT");
+        f.setInfo("Este filtro se encarga de los Estados en los Programados MT.");
+        f.setPendiente(false);
+        f.setTratamiento(true);
+        f.setDespachado(true);
+        f.setAnomalia(true);
+        f.setCerrado(false);
+        f.setCancelado(false);
+        filtrosList.add(f);
+        
+        request.setAttribute("filtrosList", filtrosList);
+    %>
 
     <div id="tabla-filtros">
         <form action="ServletFiltros" method="post">
@@ -38,37 +84,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Ingreso MT General</td>
-                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="1"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="2"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="3"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="4"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="5"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso MT General" data-estado="6"></div></td>
-                    </tr>
-                    <tr>
-                        <td>Ingreso Forzado MT</td>
-                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="1"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="2"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="3"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="4"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="5"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Forzado MT" data-estado="6"></div></td>
-                    </tr>
-                    <tr>
-                        <td>Ingreso Programado MT</td>
-                        <td><img id="info-icon" src="./img/info.png" alt="informacion del filtro..."></img></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="1"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="2"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="3"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="4"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="5"></div></td>
-                        <td><div class="estado-control" data-proceso="Ingreso Programado MT" data-estado="6"></div></td>
-                    </tr>
-                    <!-- Repite estas filas para los demás procesos -->
+                    <% for (FiltrosDTO filtro : filtrosList) { %>
+                        <tr>
+                            <td><%= filtro.getProceso() %></td>
+                            <td><img id="info-icon" src="./img/info.png" alt="<%= filtro.getInfo() %>"></img></td>
+                            <td><input type="checkbox" id="miCheckbox" name="pendiente" <%= filtro.isPendiente()? "checked" : "" %>></td>
+                            <td><input type="checkbox" id="miCheckbox" name="tratamiento" <%= filtro.isTratamiento()? "checked" : "" %>></td>
+                            <td><input type="checkbox" id="miCheckbox" name="despachado" <%= filtro.isDespachado()? "checked" : "" %>></td>
+                            <td><input type="checkbox" id="miCheckbox" name="anomalia" <%= filtro.isAnomalia()? "checked" : "" %>></td>
+                            <td><input type="checkbox" id="miCheckbox" name="cerrado" <%= filtro.isCerrado()? "checked" : "" %> disabled></td>
+                            <td><input type="checkbox" id="miCheckbox" name="cancelado" <%= filtro.isCancelado()? "checked" : "" %> disabled></td>
+                        </tr>
+                    <% } %>                    
                 </tbody>
             </table>
 
