@@ -3,18 +3,29 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    
+    <!-- Configuración del context path -->
+    <context-param>
+        <param-name>contextPath</param-name>
+        <param-value>/edenor_filtros/login.jsp</param-value>
+    </context-param>
 
     <!-- Configuración de servlets -->
     <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>tu.paquete.LoginServlet</servlet-class>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>Servlet.ServletLogin</servlet-class>
     </servlet>
 
-
-
+    <!-- Duracion de la sesion-->
+    <session-config>
+        <session-timeout>150</session-timeout>
+    </session-config>
     <!-- Configuración de la página de inicio (welcome page) -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
+
+
+
 
 </web-app>

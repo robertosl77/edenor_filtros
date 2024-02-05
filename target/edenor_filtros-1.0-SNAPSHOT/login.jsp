@@ -19,14 +19,13 @@
         
         <% if (request.getParameter("error") != null) { %>
             <div id="error-message">
-                ¡Usuario o contraseña incorrectos! </br>Inténtalo de nuevo.
+                ¡Usuario o contraseña incorrectos! <br>Inténtalo de nuevo.
             </div>
-            </br>
+            <br>
         <% } %>
 
-        
         <!-- Formulario de login -->
-        <form action="LoginServlet" method="post" onsubmit="return validarUsuario();">
+        <form action="ServletLogin" method="post" onsubmit="return validarUsuario();">
             <label for="username">Usuario:</label>
             <input type="text" id="username" name="username" required>
 
@@ -38,10 +37,8 @@
     </div>
 
     <div id="new-access-link">
-        <p>¿No logra ingresar? <a href="/LoginServlet?accion=solicitarAcceso">Solicitar nuevo acceso</a></p>
+        <p>¿No logra ingresar? <a href="ServletLogin?accion=solicitarAcceso">Solicitar nuevo acceso</a></p>
     </div>
-
-        
       
 </body>
 </html>
