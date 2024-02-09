@@ -1,3 +1,19 @@
+<%@page import="ad.AD"%>
+<%@page import="javax.naming.directory.InitialDirContext"%>
+<%@page import="javax.naming.directory.DirContext"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="java.util.Properties"%>
+<%@page import="java.awt.geom.Area"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.NoSuchElementException"%>
+<%@page import="java.util.StringTokenizer"%>
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.util.Vector"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,7 +32,19 @@
     </div>
 
     <div id="login-form">
+        
         <%
+            //Valido seguridad LDAP
+            /*
+            AD ad = new AD();
+            ad.configuracionLDAP_QA();
+            session.setAttribute("ads", ad);
+            ad.getAllUsers();
+            if (ads.getConnection()==null){
+                out.println("<div id='status-message'>Fallo al obtener configuracion LDAP.</div><br>");
+            }else 
+            */
+
             //Mensajes que duran unos segundos
             if (request.getParameter("accion")!=null){
                 if (request.getParameter("accion").equals("err_login")){

@@ -4,8 +4,8 @@
     Author     : robertosl
 --%>
 <%@page import="dto.DocumentosDTO"%>
-<%@page import="funciones.FiltrosUtil"%>
 <%@page import="dto.FiltrosDTO"%>
+<%@page import="funciones.FiltrosUtil"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -28,11 +28,12 @@
     </div>
     
     <%
+        FiltrosUtil f= new FiltrosUtil();
         //Dejo preparado una matriz para cuando pueda tomar valores de oracle
         ArrayList<FiltrosDTO> filtrosOriginales= new ArrayList<>();
         ArrayList<FiltrosDTO> filtrosSimulados= new ArrayList<>();
-        ArrayList<FiltrosDTO> filtrosList = FiltrosUtil.generarListaFiltros();
-        ArrayList<DocumentosDTO> documentosLista = FiltrosUtil.generarListaDocumentos();
+        ArrayList<FiltrosDTO> filtrosList = f.generarListaFiltros();
+        ArrayList<DocumentosDTO> documentosLista = f.generarListaDocumentos();
         
         if (request.getParameter("accion")==null) {
             filtrosOriginales= filtrosList;

@@ -25,10 +25,11 @@ public class ServletLogin extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ValidaUsuario vu= new ValidaUsuario();
         String usuario = request.getParameter("username");
         String contrasena = request.getParameter("password");
 
-        if (ValidaUsuario.validaUsuario(usuario, contrasena)) {
+        if (vu.validaUsuario(usuario, contrasena)) {
             // Si la validación es exitosa, redirige a filtros.jsp
             response.sendRedirect("filtros.jsp?accion=load");
         } else {

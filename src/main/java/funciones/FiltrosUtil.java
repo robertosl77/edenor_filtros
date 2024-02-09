@@ -8,10 +8,9 @@ import java.util.ArrayList;
  *
  * @author robertosl
  */
-// FiltrosUtil.java
 public class FiltrosUtil {
     
-    public static ArrayList<FiltrosDTO> generarListaFiltros() {
+    public ArrayList<FiltrosDTO> generarListaFiltros() {
         ArrayList<FiltrosDTO> filtrosList = new ArrayList<>();
         
         FiltrosDTO f1 = new FiltrosDTO();
@@ -53,7 +52,7 @@ public class FiltrosUtil {
         return filtrosList;
     }
 
-    public static ArrayList<DocumentosDTO> generarListaDocumentos() {
+    public ArrayList<DocumentosDTO> generarListaDocumentos() {
         ArrayList<DocumentosDTO> documentos = new ArrayList<>();
         
         DocumentosDTO s= new DocumentosDTO();
